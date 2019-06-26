@@ -5,7 +5,7 @@ import schema from './schema';
 const app = express();
 
 app.get('/', (req, res)=>{
-  res.send('GraphQL is amazing');
+  res.send( 'GraphQL is amazing' );
 });
 
 const root = {
@@ -16,7 +16,10 @@ const root = {
       "lastName": 'Henri',
       "gender": 'male',
       "language": 'English',
-      "email": 'me@me.com',
+      "emails": [
+        { email: 'me@me.com' },
+        { email: 'me@me.com' }
+      ],
     }
   }
 };

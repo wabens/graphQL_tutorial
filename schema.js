@@ -8,16 +8,25 @@ const schema = buildSchema(`
     lastName: String
     language: String
     gender: String
-    emails: [Email]!
-  }
-
-  type Email {
     email: String
   }
 
   type Query {
-      friend: Friend
+      getFriend(id: ID): Friend
     }
+  
+  input FriendInput {
+    id: ID
+    firstName: String!
+    lastName: String
+    language: String
+    gender: String
+    email: String
+  }
+
+  type Mutation {
+    createFriend(input: FriendInput): Friend
+  }
 `
 )
 

@@ -9,7 +9,16 @@ app.get('/', (req, res)=>{
 });
 
 const root = {
-  hello: () => `Hi I'm Walter`
+  friend: () => {
+    return {
+      "id": 2,
+      "firstName": 'Manny',
+      "lastName": 'Henri',
+      "gender": 'male',
+      "language": 'English',
+      "email": 'me@me.com',
+    }
+  }
 };
 
 app.use('/graphql', graphqlHTTP({

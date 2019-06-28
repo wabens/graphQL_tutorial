@@ -7,8 +7,14 @@ const schema = buildSchema(`
     firstName: String
     lastName: String
     language: String
-    gender: String
+    gender: Gender
     email: String
+  }
+
+  enum Gender {
+    MALE
+    FEMALE
+    OTHER
   }
 
   type Query {
@@ -20,7 +26,7 @@ const schema = buildSchema(`
     firstName: String!
     lastName: String
     language: String
-    gender: String
+    gender: Gender
     email: String
   }
 
